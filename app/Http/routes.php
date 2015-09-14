@@ -15,15 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-//Route::resource('incoming', IncomingController::class);
-//Route::resource('payment', PaymentController::class);
-//Route::resource('metatype', 
-//	MetaTypeController::class, [
-//		'except' => ['update']
-//	]
-//);
-
 $resources = [
     [
         'name'       => 'metatype',

@@ -11,7 +11,8 @@
 |
 */
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(App\User::class, function (Faker\Generator $faker) 
+{
     return [
         'name' => $faker->name,
         'email' => $faker->email,
@@ -20,37 +21,39 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\MetaType::class, function (Faker\Generator $faker) {
+$factory->define(App\MetaType::class, function (Faker\Generator $faker) 
+{
 
-	$type = $faker->randomElement(['Payment', 'Incoming']);
-	if($type == 'Payment') {
-		return [
-	        'type' => $type,
-	        'value' => $faker->randomElement([
-	        	'FOOD', 
-	        	'TRANSPORT', 
-	        	'HEALTH', 
-	        	'RECREATION', 
-	        	'CREDIT CARD', 
-	        	'FUND'
-        	])
-    	];
-	}
+    $type = $faker->randomElement(['Payment', 'Incoming']);
+    if($type == 'Payment') {
+            return [
+            'type' => $type,
+            'value' => $faker->randomElement([
+                    'FOOD', 
+                    'TRANSPORT', 
+                    'HEALTH', 
+                    'RECREATION', 
+                    'CREDIT CARD', 
+                    'FUND'
+            ])
+    ];
+    }
 
-	// If is Incoming
-	return [
+    // If is Incoming
+    return [
         'type' => $type,
         'value' => $faker->randomElement([
-        	'IC', 
-        	'MOTHER GIVE', 
-        	'FATHER GIVE', 
-        	'RECREATION', 
-        	'INTERNSHIP', 
-        	'SALARY',
-        	'FOUND',
-        	'BUS PASS',
-        	'LEFTOVER'
-    	])
-	];
+                'IC', 
+                'MOTHER GIVE', 
+                'FATHER GIVE', 
+                'RECREATION', 
+                'INTERNSHIP', 
+                'SALARY',
+                'FOUND',
+                'BUS PASS',
+                'LEFTOVER'
+        ])
+    ];
 
 });
+

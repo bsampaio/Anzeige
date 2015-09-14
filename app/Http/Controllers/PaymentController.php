@@ -17,7 +17,8 @@ class PaymentController extends Controller
      */
     public function index()
     {
-        return Payment::all();
+        $payments = Payment::all();
+        return view('payment.list', compact('payments'));
     }
 
     /**
@@ -27,7 +28,8 @@ class PaymentController extends Controller
      */
     public function create()
     {
-        return view('payment.new');
+        $metaTypes = \App\MetaType::where('type', 'Payment')->get();
+        return view('payment.new', compact('metaTypes'));
     }
 
     /**
