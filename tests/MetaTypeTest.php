@@ -24,24 +24,14 @@ class MetaTypeTest extends TestCase
      *
      * @return void
      */
-    public function testShouldFindInJson(){
-        $metaType = factory(App\MetaType::class)->create();
-        $this->get('/metatype',[])
-             ->seeJson($metaType->toArray());
-    }
-
-    /**
-     * Verifica se o objeto salvo pode ser obtido pelo get
-     *
-     * @return void
-     */
-//    public function testShouldFindExatlyJson(){
+//    public function testShouldFindInJson(){
 //        $metaType = factory(App\MetaType::class)->create();
-//        $this->get('/metatype/'.$metaType->id)
-//             ->seeJsonEquals($metaType->toArray());
+//        $this->get('/metatype',[])
+//             ->seeJson($metaType->toArray());
 //    }
+
     
-    public function testShouldFindExatlyJson(){
+    public function testShouldFindRegistered(){
         $metaType = factory(App\MetaType::class)->create();
         $this->visit('/metatype/'.$metaType->id)
              ->see($metaType->value)
