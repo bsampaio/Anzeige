@@ -52,7 +52,9 @@ class PaymentController extends Controller
      */
     public function show($id)
     {
-        return Payment::findOrFail($id);
+        $payment = Payment::findOrFail($id);
+        $metaTypes = \App\MetaType::all();
+        return view('payment.view', compact(['payment', 'metaTypes']));
     }
 
     /**
@@ -86,6 +88,7 @@ class PaymentController extends Controller
      */
     public function destroy($id)
     {
-        return Payment::destroy($id);
+        Payment::destroy($id);
+        return redirect()->route('payment.index');
     }
 }

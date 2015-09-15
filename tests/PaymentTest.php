@@ -33,7 +33,7 @@ class PaymentTest extends TestCase
     
     
     /**
-     * A basic functional test example.
+     * Creates and returns a new Payment.
      *
      * @return App\Payment
      */
