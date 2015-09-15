@@ -30,7 +30,7 @@
                 <td>{{$payment->type->value}}</td>
                 <td>{{$payment->due_date}}</td>
                 <td>{{$payment->value}}</td>
-                <td>{{$payment->paid_day}}</td>
+                <td>{{$payment->paid_date}}</td>
             </tr>
             @endforeach
         </tbody>

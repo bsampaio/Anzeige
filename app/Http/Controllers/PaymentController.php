@@ -41,7 +41,7 @@ class PaymentController extends Controller
     public function store(Request $request)
     {
         $payment = Payment::create($request->all());
-        return $payment;
+        return redirect()->route('payment.index');
     }
 
     /**
