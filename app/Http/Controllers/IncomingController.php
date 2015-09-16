@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Incoming;
 
 class IncomingController extends Controller
 {
@@ -16,7 +17,8 @@ class IncomingController extends Controller
      */
     public function index()
     {
-        //
+        $incomings = Incoming::all();
+        return view('incoming.list', compact('incomings'));
     }
 
     /**
@@ -26,7 +28,8 @@ class IncomingController extends Controller
      */
     public function create()
     {
-        //
+        $metaTypes = \App\MetaType::where('type', 'Incoming')->get();
+        return view('incoming.new', compact('metaTypes'));
     }
 
     /**
@@ -37,7 +40,8 @@ class IncomingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $incoming = Incoming::create($request->all());
+        return redirect()->route('incoming.index');
     }
 
     /**
@@ -48,7 +52,9 @@ class IncomingController extends Controller
      */
     public function show($id)
     {
-        //
+        $incoming = Incoming::findOrFail($id);
+        $metaTypes = \App\MetaType::where('type', 'Incoming')->get();
+        return view('incoming.view', compact(['incoming', 'metaTypes']));
     }
 
     /**
@@ -59,7 +65,7 @@ class IncomingController extends Controller
      */
     public function edit($id)
     {
-        //
+        return Incoming::findOrFail($id);
     }
 
     /**
@@ -71,7 +77,7 @@ class IncomingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return Incoming::updateOrCreate($request->all());
     }
 
     /**
@@ -82,6 +88,7 @@ class IncomingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Incoming::destroy($id);
+        return redirect()->route('incoming.index');
     }
 }

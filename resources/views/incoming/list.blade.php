@@ -15,18 +15,22 @@
 @section('content')
 
     @section('primary-title', 'MetaTypes List')
-    <table id='metatypes' class='table table-striped table-bordered table-hover'>
+    <table id='incomings' class='table table-striped table-bordered table-hover'>
         <thead>
             <th>ID</th>
             <th>Type</th>
+            <th>Due Date</th>
             <th>Value</th>
+            <th>Paid Date</th>
         </thead>
         <tbody>
-            @foreach($metaTypes as $metaType)
+            @foreach($incomings as $incoming)
             <tr>
-                <td>{{$metaType->id}}</td>
-                <td>{{$metaType->type}}</td>
-                <td>{{$metaType->value}}</td>
+                <td>{{$incoming->id}}</td>
+                <td>{{$incoming->type->value}}</td>
+                <td>{{$incoming->due_date}}</td>
+                <td>{{$incoming->value}}</td>
+                <td>{{$incoming->paid_date}}</td>
             </tr>
             @endforeach
         </tbody>
@@ -47,8 +51,14 @@
 
 <script>
     $(document).ready(function() {
-        $('#metatypes').DataTable({
+        $('#incomings').DataTable({
                 responsive: true
+        });
+        $('#incomings tbody').on('dblclick', 'tr', function(){
+            var pid = $(this).children().first().text();
+            pid = parseInt(pid);
+            if(typeof pid == 'number')
+                window.location.href = "{{url('/incoming')}}/"+pid;
         });
     });
     

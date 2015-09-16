@@ -55,6 +55,11 @@
                 responsive: true
         });
     });
-    
+    $('#payments tbody').on('dblclick', 'tr', function(){
+        var pid = $(this).children().first().text();
+        pid = parseInt(pid);
+        if(typeof pid == 'number')
+            window.location.href = "{{url('/incoming')}}/"+pid;
+    });
 </script>
 @endsection
