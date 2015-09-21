@@ -1,11 +1,11 @@
 @extends('layouts.sbadmin.base')
-@section('title','New Payment')
+@section('title','Payment')
 @section('content')
-		@section('primary-title','New Payment')
+		@section('primary-title','Payment')
                 <div class="col-sm-6">
                    <form id="payment-form" role="form" method="POST" action="{{route('payment.destroy', $payment->id)}}">
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
-			<p class="help-block">Delete a Payment.</p>
+			<p class="help-block">Details of Payment.</p>
                         
                         <div class="form-group">
 				<label for="type">Type</label>

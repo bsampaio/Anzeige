@@ -72,6 +72,10 @@
     <!-- Custom Theme JavaScript -->
     <script src="/dist/js/sb-admin-2.js"></script>
     
+    <!-- Custom Charts.js and Moment.js -->
+    <script src="/public/Charts/Chart.min.js" ></script>
+    <script src="/public/moment/moment.js" ></script>
+    
     @yield('custom-scripts')
 </body>
 

@@ -10,6 +10,7 @@ class Incoming extends Model
     
     protected $fillable = ['metatype_id', 'value', 'due_date', 'paid_date', 'description'];
     protected $dates = ['due_date', 'paid_date'];
+    protected $table = 'incomings';
 
 
     public function type()
