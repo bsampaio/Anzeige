@@ -1,6 +1,6 @@
 @extends('layouts.sbadmin.base')
 
-@section('title', 'MetaTypes List')
+@section('title', 'Payments List')
 
 @section('custom-css')
 <!-- DataTables CSS -->
@@ -14,7 +14,7 @@
 
 @section('content')
 
-    @section('primary-title', 'MetaTypes List')
+    @section('primary-title', 'Payments List')
     <table id='payments' class='table table-striped table-bordered table-hover'>
         <thead>
             <th>ID</th>
