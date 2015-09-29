@@ -71,10 +71,9 @@ class SecurityTest extends TestCase
 	 * This test try to find some know issues 
 	 * using your composer file.
 	 */
-    public function testComposerIsOk()
+    public function testIfComposerHaventKnowIssues()
     {
     	$response = $this->doCheck($this->lock);
     	$this->assertContains("No known* vulnerabilities detected.\n", $response);
-        $this->assertTrue(true);
     }
 }
