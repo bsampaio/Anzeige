@@ -1,5 +1,6 @@
 ## Laravel PHP Framework
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/30291582f5df41c0bafca1b4c45dcf66)](https://www.codacy.com/app/bsampaio/Anzeige?utm_source=github.com&utm_medium=referral&utm_content=bsampaio/Anzeige&utm_campaign=badger)
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
 [![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
